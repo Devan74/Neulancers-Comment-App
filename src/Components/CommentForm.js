@@ -27,7 +27,7 @@ const CommentForm = ({ postId, onCommentSubmit }) => {
   };
 
   return (
-    <div>
+    <div className="add-coment">
       <h2 className="comment-head">Add a Comment</h2>
       <div className="comments">
         <textarea

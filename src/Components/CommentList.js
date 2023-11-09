@@ -26,7 +26,7 @@ const CommentList = ({ postId }) => {
 
   return (
     <div>
-      <h2>Comments:</h2>
+      <h2 className='comments-head'>Comments:</h2>
       <ul className="comment-list">
         {comments.map((comment) => (
           <Comment key={comment.id} comment={comment} onDelete={handleDeleteComment} />

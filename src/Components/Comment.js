@@ -19,7 +19,7 @@ const Comment = ({ comment, onDelete }) => {
         setEditing(false);
         //setUpdatedContent(response.data.body);
         //console.log(response.data.body)
-        console.log("Updated Content:", updatedContent);
+        //console.log("Updated Content:", updatedContent);
       })
       .catch((error) => {
         console.error('Error updating comment:', error);
@@ -52,7 +52,7 @@ const Comment = ({ comment, onDelete }) => {
         <div>
           <p>Author: {comment.id}</p>
           <p>{updatedContent}</p>
-          <p>Created at: {}</p>
+          <p>Created at: {new Date(8.64e15).toString()}</p>
           <div className="comment-actions">
             <button className="edit" onClick={handleEdit}>
               Edit

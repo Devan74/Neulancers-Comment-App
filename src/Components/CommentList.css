@@ -1,4 +1,6 @@
-
+.comments-head{
+    padding-left: 2rem;
+}
 .comment-list {
   list-style: none;
   padding: 0;
