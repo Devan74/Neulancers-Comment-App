@@ -3,11 +3,11 @@ import axios from "axios";
 import "./CommentFrom.css";
 
 const CommentForm = ({ postId, onCommentSubmit }) => {
-  const [content, setContent] = useState("");
+  const [body, setContent] = useState("");
 
   const handleCommentSubmit = () => {
     const newComment = {
-      content,
+      body,
       userId: 1,
     };
 
@@ -18,7 +18,7 @@ const CommentForm = ({ postId, onCommentSubmit }) => {
       )
       .then((response) => {
         onCommentSubmit(response.data);
-        console.log(response.data);
+        //console.log('New Comment Data:', response.data);
         setContent("");
       })
       .catch((error) => {
@@ -32,7 +32,7 @@ const CommentForm = ({ postId, onCommentSubmit }) => {
       <div className="comments">
         <textarea
           rows="4"
-          value={content}
+          value={body}
           onChange={(e) => setContent(e.target.value)}
         />
         <button className="submit" onClick={handleCommentSubmit}>

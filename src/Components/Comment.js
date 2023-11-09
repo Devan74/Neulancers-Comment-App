@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Comment.css';
 
-const Comment = ({ comment, onDelete }) => {
+const Comment = ({ comment, onDelete}) => {
   const [isEditing, setEditing] = useState(false);
   const [updatedContent, setUpdatedContent] = useState(comment.body);
 
@@ -50,9 +50,10 @@ const Comment = ({ comment, onDelete }) => {
         </div>
       ) : (
         <div>
-          <p>Author: {comment.id}</p>
-          <p>{updatedContent}</p>
-          <p>Created at: {new Date(8.64e15).toString()}</p>
+          <p><b>No:</b>{comment.id}</p>
+          <p><b>Author:</b> {comment.name}</p>
+          <p><b>Content:</b>{updatedContent}</p>
+          <p><b>Created at:</b> {new Date(8.64e15).toString()}</p>
           <div className="comment-actions">
             <button className="edit" onClick={handleEdit}>
               Edit

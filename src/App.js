@@ -13,14 +13,14 @@ function App() {
  
   const handleCommentSubmit = (comment) => {
     setNewComments([...newComments, comment]);
-    console.log("New Comment Data:", comment);
+    //console.log("New Comment Data:", comment);
   };
 
   return (
     <div className="App">
       <h1 className='heading'>Post Comments</h1>
       <div className="comments-container">
-        <CommentList postId={postId} newComments={newComments} />
+        <CommentList postId={postId} newComments={newComments} setNewComments={setNewComments} />
         <CommentForm postId={postId} onCommentSubmit={handleCommentSubmit} />
       </div>
     </div>
