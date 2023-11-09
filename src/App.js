@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import CommentList from './Components/CommentList';
+import CommentForm from './Components/CommentForm';
 import './App.css';
 
 function App() {
+  
+  const postId = 1; 
+
+  
+  const [newComments, setNewComments] = useState([]);
+
+ 
+  const handleCommentSubmit = (comment) => {
+    setNewComments([...newComments, comment]);
+    console.log("New Comment Data:", comment);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className='heading'>Post Comments</h1>
+      <div className="comments-container">
+        <CommentList postId={postId} newComments={newComments} />
+        <CommentForm postId={postId} onCommentSubmit={handleCommentSubmit} />
+      </div>
     </div>
   );
 }

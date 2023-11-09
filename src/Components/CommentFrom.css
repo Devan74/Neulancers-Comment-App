@@ -1,0 +1,15 @@
+/* .submit{
+background-color: blue;
+color: white;
+border: none;
+}  */
+.comment-head{
+    text-align: center;
+}
+.comments{
+    display: flex;
+    justify-content: center;
+}
+textarea{
+    outline: none;
+}
